@@ -30,7 +30,7 @@ public class HomePagesTests extends TestBase {
 
 
     }
-    @Test
+    @Test(groups = {"sanity", "regression"})
     public void openHomePage()  {
         Log.info("--------Test openHomePage was stareted-----");
         Log.info("Test openHomePage: get name of GoToEventButton");
@@ -44,7 +44,7 @@ public class HomePagesTests extends TestBase {
                 "'Go to Event list' is not equal to real name of the button");
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void goToEventsTest()  {
         homePage.pressGoToEventButton();
         eventsUnAuthPage.waitUntilPageLoad();

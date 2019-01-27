@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <!--Your comment-->
 <suite name="Tests" verbose="5">
-  <test name="tests from Login Page">
+  <test name="tests from Login and Home Pages">
     <!--<groups>
       <run>
         <exclude name="smoke"/>
@@ -14,6 +14,7 @@
     </packages>-->
     <classes>
       <class name="tests.LoginPageTests"/>
+      <class name="tests.HomePagesTests"/>
     </classes>
   </test>
   <!--<test name="regression">

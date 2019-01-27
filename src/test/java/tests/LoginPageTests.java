@@ -41,7 +41,7 @@ public class LoginPageTests extends TestBase {
 
     }
 
-    @Test(dataProviderClass = DataProviders.class, dataProvider = "loginPositive")
+    @Test(groups = {"sanity","regression"},dataProviderClass = DataProviders.class, dataProvider = "loginPositive")
     public void loginPositive(String email, String password)  {
         Log.info("--------Test loginPositive was started---------");
         Log.info("Parameter: email = " + email);
@@ -65,7 +65,7 @@ public class LoginPageTests extends TestBase {
 
     }
 
-    @Test( dataProviderClass = DataProviders.class, dataProvider = "loginNegative")
+    @Test( groups = {"regression","negative"},dataProviderClass = DataProviders.class, dataProvider = "loginNegative")
     public void loginNegativeNoSuchUser(String email, String password){
         Log.info("--------- Test loginNegative was started -----------");
         Log.info("Parameter - email: " + email);
@@ -82,7 +82,7 @@ public class LoginPageTests extends TestBase {
        loginPage.pressCancelButton()
                .waitUntilWindowIsClosed();
     }
-    @Test(dataProviderClass = DataProviders.class,
+    @Test(groups = {"regression","negative"},dataProviderClass = DataProviders.class,
             dataProvider = "loginNegativeIncorrectPassword")
     public void loginNegativePasswordIncorrect(String email, String password){
         loginPage.waitUntilPageLoad()
@@ -95,7 +95,7 @@ public class LoginPageTests extends TestBase {
                 .waitUntilWindowIsClosed();
     }
 
-    @Test(dataProviderClass = DataProviders.class,
+    @Test(groups = {"regression","negative"},dataProviderClass = DataProviders.class,
             dataProvider = "loginNegativeIncorrectEmail")
     public void loginNegativeEmailIncorrect(String email, String password){
         loginPage.waitUntilPageLoad()
@@ -108,7 +108,7 @@ public class LoginPageTests extends TestBase {
                 .waitUntilWindowIsClosed();
     }
 
-    @Test
+    @Test(groups = {"regression","negative"})
     public void loginNegativeEmptyEmailPassword(){
         loginPage.waitUntilPageLoad()
                 .enterValueToFieldEmail("")
@@ -117,7 +117,7 @@ public class LoginPageTests extends TestBase {
         Assert.assertEquals(2,loginPage.getQuantityAlertsForEmptyFields());
     }
 
-    @Test
+    @Test(groups = {"regression","negative"})
     public void loginNegativeOnlyEmailIsEmpty(){
         loginPage.waitUntilPageLoad()
                 .enterValueToFieldEmail("")
@@ -126,7 +126,7 @@ public class LoginPageTests extends TestBase {
         Assert.assertEquals(1,loginPage.getQuantityAlertsForEmptyFields());
     }
 
-    @Test
+    @Test(groups = {"regression","negative"})
     public void loginNegativeOnlyPasswordIsEmpty(){
         loginPage.waitUntilPageLoad()
                 .enterValueToFieldPassword("")
