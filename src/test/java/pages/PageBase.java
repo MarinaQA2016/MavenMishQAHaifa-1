@@ -62,7 +62,7 @@ public abstract class PageBase {
   {
     try {
       new WebDriverWait(driver, time).until(ExpectedConditions
-              .invisibilityOfAllElements());
+              .visibilityOfAllElements(list));
     }
     catch(Exception e){
       e.printStackTrace();

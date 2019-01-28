@@ -120,7 +120,7 @@ public class LoginPageHelper extends PageBase {
 
     public int getQuantityAlertsForEmptyFields(){
         Log.info("LoginPageHelper: --- getQuantityAlertsForEmptyFields() ---");
-        Log.info("LoginPageHelper: wait until emptyAlertsList button is absent");
+        Log.info("LoginPageHelper: wait until emptyAlertsList elements are loaded");
         waitUntilAllElementsAreLoaded(driver, emptyAlertsList,30);
         Log.info("LoginPageHelper: return size of emptyAlertsList");
         return emptyAlertsList.size();
