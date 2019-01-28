@@ -5,6 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.Random;
 
 public abstract class PageBase {
@@ -51,6 +52,17 @@ public abstract class PageBase {
     try {
       new WebDriverWait(driver, time).until(ExpectedConditions
               .visibilityOf(element));
+    }
+    catch(Exception e){
+      e.printStackTrace();
+    }
+  }
+  public void waitUntilAllElementsAreLoaded(WebDriver driver,
+                                       List<WebElement> list, int time)
+  {
+    try {
+      new WebDriverWait(driver, time).until(ExpectedConditions
+              .invisibilityOfAllElements());
     }
     catch(Exception e){
       e.printStackTrace();

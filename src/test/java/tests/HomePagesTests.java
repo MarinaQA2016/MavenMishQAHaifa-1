@@ -18,7 +18,7 @@ public class HomePagesTests extends TestBase {
     EventsUnAuthPageHelper eventsUnAuthPage;
     private static Logger Log = Logger.getLogger(LogLog4j.class.getName());
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void initPage(){
         homePage = PageFactory
                 .initElements(driver, HomePageHelper.class);
