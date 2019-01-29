@@ -58,6 +58,8 @@ public class LoginPageHelper extends PageBase {
 
     public LoginPageHelper enterValueToFieldEmail(String value) {
         Log.info("LoginPageHelper: ---enterValueToFieldEmail()---");
+        Log.info("LoginPageHelper: wait until emailField is loaded ---");
+        waitUntilElementIsLoaded(driver, emailField,20);
         Log.info("LoginPageHelper: was eneterd email: " + value);
         setValueToField(emailField,value);
         return this;
@@ -65,6 +67,8 @@ public class LoginPageHelper extends PageBase {
 
     public LoginPageHelper enterValueToFieldPassword(String value) {
         Log.info("LoginPageHelper: ---enterValueToFieldPassword()---");
+        Log.info("LoginPageHelper: wait until emailPasswor is loaded ---");
+        waitUntilElementIsLoaded(driver, passwordField,20);
         Log.info("LoginPageHelper: was enetered password: " + value);
         setValueToField(passwordField,value);
         return this;
