@@ -14,7 +14,7 @@
     </packages>-->
     <classes>
       <class name="tests.HomePagesTests"/>
-      <class name="tests.LoginPageTests"/>
+      <!--<class name="tests.LoginPageTests"/>-->
     </classes>
   </test>
   <!--<test name="regression">
