@@ -44,22 +44,22 @@ public class LoginPageHelper extends PageBase {
         Log.info("LoginPageHelper: wait until Cancel button was loaded");
         waitUntilElementIsLoaded(driver,
                 cancelButton,
-                20);
+                40);
         Log.info("LoginPageHelper: wait until Email field  was loaded");
         waitUntilElementIsLoaded(driver,
                 emailField,
-                20);
+                50);
         Log.info("LoginPageHelper: wait until Password field  was loaded");
         waitUntilElementIsLoaded(driver,
                 passwordField,
-                20);
+                50);
         return this;
     }
 
     public LoginPageHelper enterValueToFieldEmail(String value) {
         Log.info("LoginPageHelper: ---enterValueToFieldEmail()---");
         Log.info("LoginPageHelper: wait until emailField is loaded ---");
-        waitUntilElementIsLoaded(driver, emailField,20);
+        waitUntilElementIsLoaded(driver, emailField,40);
         Log.info("LoginPageHelper: was eneterd email: " + value);
         setValueToField(emailField,value);
         return this;
@@ -68,7 +68,7 @@ public class LoginPageHelper extends PageBase {
     public LoginPageHelper enterValueToFieldPassword(String value) {
         Log.info("LoginPageHelper: ---enterValueToFieldPassword()---");
         Log.info("LoginPageHelper: wait until emailPasswor is loaded ---");
-        waitUntilElementIsLoaded(driver, passwordField,20);
+        waitUntilElementIsLoaded(driver, passwordField,40);
         Log.info("LoginPageHelper: was enetered password: " + value);
         setValueToField(passwordField,value);
         return this;
@@ -77,7 +77,7 @@ public class LoginPageHelper extends PageBase {
     public LoginPageHelper pressLogInButton() {
         Log.info("LoginPageHelper: --- pressLogInButton() ---");
         Log.info("LoginPageHelper: wait until Login button is loaded");
-        waitUntilElementIsLoaded(driver, loginButton, 20);
+        waitUntilElementIsLoaded(driver, loginButton, 40);
         Log.info("LoginPageHelper: click on Login button");
         loginButton.click();
         return this;
@@ -86,7 +86,7 @@ public class LoginPageHelper extends PageBase {
     public String getAlertText() {
         Log.info("LoginPageHelper: --- getAlertText() ---");
         Log.info("LoginPageHelper: wait until Alert text is loaded");
-        waitUntilElementIsLoaded(driver, alertText,30);
+        waitUntilElementIsLoaded(driver, alertText,40);
         Log.info("LoginPageHelper: return text of alertText ");
     return alertText.getText();
 
@@ -102,14 +102,14 @@ public class LoginPageHelper extends PageBase {
     public LoginPageHelper waitUntilWindowIsClosed(){
         Log.info("LoginPageHelper: --- waitUntilWindowIsClosed() ---");
         Log.info("LoginPageHelper: wait until Cancel button is absent");
-        waitUntilElementIsAbsent(driver, cancelButton,30);
+        waitUntilElementIsAbsent(driver, cancelButton,40);
         return this;
     }
 
     public String getAlertEmail() {
         Log.info("LoginPageHelper: --- getAlertEmail() ---");
         Log.info("LoginPageHelper: wait until alertEmail button is absent");
-        waitUntilElementIsLoaded(driver, alertEmail, 30);
+        waitUntilElementIsLoaded(driver, alertEmail, 40);
         Log.info("LoginPageHelper: return text of alertEmail ");
         return alertEmail.getText();
     }
@@ -117,7 +117,7 @@ public class LoginPageHelper extends PageBase {
     public String getAlertPassword() {
         Log.info("LoginPageHelper: --- getAlertPassword() ---");
         Log.info("LoginPageHelper: wait until alertPassword button is absent");
-        waitUntilElementIsLoaded(driver, alertPassword, 30);
+        waitUntilElementIsLoaded(driver, alertPassword, 40);
         Log.info("LoginPageHelper: return text of alertPassword ");
         return alertPassword.getText();
     }
@@ -125,7 +125,7 @@ public class LoginPageHelper extends PageBase {
     public int getQuantityAlertsForEmptyFields(){
         Log.info("LoginPageHelper: --- getQuantityAlertsForEmptyFields() ---");
         Log.info("LoginPageHelper: wait until emptyAlertsList elements are loaded");
-        waitUntilAllElementsAreLoaded(driver, emptyAlertsList,30);
+        waitUntilAllElementsAreLoaded(driver, emptyAlertsList,40);
         Log.info("LoginPageHelper: return size of emptyAlertsList");
         return emptyAlertsList.size();
     }
